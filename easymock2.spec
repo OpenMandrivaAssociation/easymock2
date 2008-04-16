@@ -64,7 +64,7 @@ So EasyMock is a perfect fit for Test-Driven Development.
 
 %package        javadoc
 Summary:        Javadoc for %{name}
-Group:          Development/Documentation
+Group:          Development/Java
 
 %description    javadoc
 Javadoc for %{name}
