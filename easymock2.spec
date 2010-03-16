@@ -32,7 +32,7 @@
 
 Name:           %{base_name}2
 Version:        2.0
-Release:        %mkrel 2.0.2
+Release:        %mkrel 2.0.3
 Epoch:          0
 Summary:        Easy mock objects
 
