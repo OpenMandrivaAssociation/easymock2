@@ -32,7 +32,7 @@
 
 Name:           %{base_name}2
 Version:        2.0
-Release:        %mkrel 2.0.5
+Release:        %mkrel 2.0.5-1
 Epoch:          0
 Summary:        Easy mock objects
 
@@ -55,6 +55,7 @@ BuildRequires:	ant-junit >= 0:1.6
 BuildRequires:	junit >= 0:3.8.1
 BuildRequires:  java-devel >= 0:1.5.0
 Requires:  java >= 0:1.5.0
+Provides:   easymock
 
 %description
 EasyMock provides Mock Objects for interfaces in JUnit tests by generating 
