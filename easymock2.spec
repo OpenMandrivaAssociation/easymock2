@@ -89,22 +89,22 @@ export CLASSPATH=
 
 
 %install
-rm -rf $RPM_BUILD_ROOT
+rm -rf %{buildroot}
 unzip %{base_name}%{version}.zip
-install -dm 755 $RPM_BUILD_ROOT%{_javadir}
+install -dm 755 %{buildroot}%{_javadir}
 
 install -pm 644 %{base_name}%{version}/%{base_name}.jar \
-  $RPM_BUILD_ROOT%{_javadir}/%{name}-%{version}.jar
+  %{buildroot}%{_javadir}/%{name}-%{version}.jar
 ln -s %{name}-%{version}.jar \
-  $RPM_BUILD_ROOT%{_javadir}/%{name}.jar
+  %{buildroot}%{_javadir}/%{name}.jar
 
 # javadoc
-install -dm 755 $RPM_BUILD_ROOT%{_javadocdir}/%{name}-%{version}
-cp -pr %{base_name}%{version}/javadoc/* $RPM_BUILD_ROOT%{_javadocdir}/%{name}-%{version}
-ln -s %{name}-%{version} $RPM_BUILD_ROOT%{_javadocdir}/%{name} 
+install -dm 755 %{buildroot}%{_javadocdir}/%{name}-%{version}
+cp -pr %{base_name}%{version}/javadoc/* %{buildroot}%{_javadocdir}/%{name}-%{version}
+ln -s %{name}-%{version} %{buildroot}%{_javadocdir}/%{name} 
 
 %clean
-rm -rf $RPM_BUILD_ROOT
+rm -rf %{buildroot}
 
 %files
 %defattr(-,root,root,-)
