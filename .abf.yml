@@ -1,5 +1,2 @@
 sources:
-  "build.xml.tar.gz:"	72edf0c08ee0ff45b97505c0b49f000d4ea9946a
-  "easymock-2.5.2.tgz:"	f43efa2e6d2ee31b0db5cbb5ed830711f378e9ba
-  "easymock-MANIFEST.MF:"	edd1d4b86605304525e31751cadc389794f2093d
-  "fetch-easymock.sh:"	563b0d73fdf87597d5b46cb639a14add5dd3b885
+  "easymock-2.0-src.tar.gz": 258e9b578c1217a31902a87f5fb82d59ad7b2bb2

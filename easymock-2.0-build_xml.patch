@@ -1,0 +1,20 @@
+--- build.xml.sav	2006-02-24 16:55:45.000000000 +0100
++++ build.xml	2006-02-24 16:57:24.000000000 +0100
+@@ -19,7 +19,7 @@
+ 		<property name="clover build directory" value="${temp directory}/bin-clover" />
+ 		<property name="clover report directory" value="${temp directory}/clover" />
+ 
+-		<property file="${user.home}/easymockbuild.properties" />
++		<property file="easymockbuild.properties" />
+ 		<property name="java 1.5" value="/System/Library/Frameworks/JavaVM.framework/Versions/1.5/Commands/java" />
+ 		<property name="java compiler" value="/System/Library/Frameworks/JavaVM.framework/Versions/1.5/Commands/javac" />
+ 	</target>
+@@ -111,7 +111,7 @@
+ 	</junit>
+ </target>
+ 
+-<target name="all" depends="clean, build, build samples and tests, javadoc, (clover), pack distribution, test distribution">
++<target name="all" depends="clean, build, build samples and tests, javadoc, pack distribution, test distribution">
+ <antcall target="clean" />
+ </target>
+ 
