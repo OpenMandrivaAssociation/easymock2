@@ -30,31 +30,26 @@
 
 %define base_name easymock
 
+Summary:        Easy mock objects
 Name:           %{base_name}2
 Version:        2.0
 Release:        2.0.5
-Epoch:          0
-Summary:        Easy mock objects
-
 Group:          Development/Java
 License:        MIT
-URL:            http://www.easymock.org/
+Url:            http://www.easymock.org/
 Source0:        easymock-2.0-src.tar.gz
 # cvs -d:pserver:anonymous@cvs.sourceforge.net:/cvsroot/easymock login
 # cvs -z3 -d:pserver:anonymous@cvs.sourceforge.net:/cvsroot/easymock export -r EasyMock2_0 easymock
-
 Patch0:		easymock-2.0-build_xml.patch
-
-BuildRoot:      %{_tmppath}/%{name}-%{version}-%{release}-root
-
 BuildArch:      noarch
-BuildRequires:  java-rpmbuild 
-BuildRequires:  jpackage-utils >= 0:1.6
+
+BuildRequires:	java-rpmbuild 
+BuildRequires:	jpackage-utils >= 0:1.6
 BuildRequires:  ant >= 0:1.6
 BuildRequires:	ant-junit >= 0:1.6
 BuildRequires:	junit >= 0:3.8.1
-BuildRequires:  java-devel >= 0:1.5.0
-Requires:  java >= 0:1.5.0
+BuildRequires:	java-devel >= 0:1.5.0
+Requires:	java >= 0:1.5.0
 
 %description
 EasyMock provides Mock Objects for interfaces in JUnit tests by generating 
@@ -62,16 +57,15 @@ them on the fly using Java's proxy mechanism. Due to EasyMock's unique style
 of recording expectations, most refactorings will not affect the Mock Objects. 
 So EasyMock is a perfect fit for Test-Driven Development.
 
-%package        javadoc
-Summary:        Javadoc for %{name}
-Group:          Development/Java
+%package	javadoc
+Summary:	Javadoc for %{name}
+Group:		Development/Java
 
-%description    javadoc
+%description	javadoc
 Javadoc for %{name}
 
-
 %prep
-%setup -q -n %{base_name}
+%setup -qn %{base_name}
 mkdir lib
 pushd lib
 ln -sf $(build-classpath junit) .
@@ -88,17 +82,17 @@ export CLASSPATH=
 
 %install
 unzip %{base_name}%{version}.zip
-install -dm 755 $RPM_BUILD_ROOT%{_javadir}
+install -dm 755 %{buildroot}%{_javadir}
 
 install -pm 644 %{base_name}%{version}/%{base_name}.jar \
-  $RPM_BUILD_ROOT%{_javadir}/%{name}-%{version}.jar
+  %{buildroot}%{_javadir}/%{name}-%{version}.jar
 ln -s %{name}-%{version}.jar \
-  $RPM_BUILD_ROOT%{_javadir}/%{name}.jar
+  %{buildroot}%{_javadir}/%{name}.jar
 
 # javadoc
-install -dm 755 $RPM_BUILD_ROOT%{_javadocdir}/%{name}-%{version}
-cp -pr %{base_name}%{version}/javadoc/* $RPM_BUILD_ROOT%{_javadocdir}/%{name}-%{version}
-ln -s %{name}-%{version} $RPM_BUILD_ROOT%{_javadocdir}/%{name} 
+install -dm 755 %{buildroot}%{_javadocdir}/%{name}-%{version}
+cp -pr %{base_name}%{version}/javadoc/* %{buildroot}%{_javadocdir}/%{name}-%{version}
+ln -s %{name}-%{version} %{buildroot}%{_javadocdir}/%{name} 
 
 %files
 %{_javadir}/*.jar
@@ -107,28 +101,4 @@ ln -s %{name}-%{version} $RPM_BUILD_ROOT%{_javadocdir}/%{name}
 %files javadoc
 %doc %{_javadocdir}/%{name}-%{version}
 %doc %{_javadocdir}/%{name}
-
-
-%changelog
-* Thu Dec 02 2010 Oden Eriksson <oeriksson@mandriva.com> 0:2.0-2.0.4mdv2011.0
-+ Revision: 605091
-- rebuild
-
-* Tue Mar 16 2010 Oden Eriksson <oeriksson@mandriva.com> 0:2.0-2.0.3mdv2010.1
-+ Revision: 522568
-- rebuilt for 2010.1
-
-* Wed Sep 02 2009 Christophe Fergeau <cfergeau@mandriva.com> 0:2.0-2.0.2mdv2010.0
-+ Revision: 424374
-- rebuild
-
-* Wed Aug 06 2008 Thierry Vignaud <tv@mandriva.org> 0:2.0-2.0.1mdv2009.0
-+ Revision: 264422
-- rebuild early 2009.0 package (before pixel changes)
-
-* Wed Apr 16 2008 Alexander Kurtakov <akurtakov@mandriva.org> 0:2.0-1.0.1mdv2009.0
-+ Revision: 194569
-- fix group
-- import easymock2
-
 
