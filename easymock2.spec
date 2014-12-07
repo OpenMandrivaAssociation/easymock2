@@ -33,7 +33,7 @@
 Summary:        Easy mock objects
 Name:           %{base_name}2
 Version:        2.0
-Release:        2.0.11
+Release:        2.0.12
 Group:          Development/Java
 License:        MIT
 Url:            http://www.easymock.org/
