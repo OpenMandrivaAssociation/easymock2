@@ -36,7 +36,7 @@ Version:        2.0
 Release:        2.0.12
 Group:          Development/Java
 License:        MIT
-Url:            http://www.easymock.org/
+Url:            https://www.easymock.org/
 Source0:        easymock-2.0-src.tar.gz
 # cvs -d:pserver:anonymous@cvs.sourceforge.net:/cvsroot/easymock login
 # cvs -z3 -d:pserver:anonymous@cvs.sourceforge.net:/cvsroot/easymock export -r EasyMock2_0 easymock
